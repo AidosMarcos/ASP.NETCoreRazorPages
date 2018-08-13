@@ -12183,11 +12183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MarcosAidos\\source\\repos\\EFCoreTutorial\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj",
+      "projectUniqueName": "C:\\Users\\MarcosAidos\\source\\repos\\ASP.NETCoreRazorPages\\ContosoUniversity\\ContosoUniversity.csproj",
       "projectName": "ContosoUniversity",
-      "projectPath": "C:\\Users\\MarcosAidos\\source\\repos\\EFCoreTutorial\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj",
+      "projectPath": "C:\\Users\\MarcosAidos\\source\\repos\\ASP.NETCoreRazorPages\\ContosoUniversity\\ContosoUniversity.csproj",
       "packagesPath": "C:\\Users\\MarcosAidos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MarcosAidos\\source\\repos\\EFCoreTutorial\\ContosoUniversity\\ContosoUniversity\\obj\\",
+      "outputPath": "C:\\Users\\MarcosAidos\\source\\repos\\ASP.NETCoreRazorPages\\ContosoUniversity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
