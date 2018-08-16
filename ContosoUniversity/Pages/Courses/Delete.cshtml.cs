@@ -29,6 +29,7 @@ namespace ContosoUniversity.Pages.Courses
             }
 
             Course = await _context.Course
+				.AsNoTracking()
                 .Include(c => c.Department).FirstOrDefaultAsync(m => m.CourseID == id);
 
             if (Course == null)
@@ -45,7 +46,7 @@ namespace ContosoUniversity.Pages.Courses
                 return NotFound();
             }
 
-            Course = await _context.Course.FindAsync(id);
+            Course = await _context.Course.AsNoTracking().FirstOrDefaultAsync(m => m.CourseID == id);
 
             if (Course != null)
             {

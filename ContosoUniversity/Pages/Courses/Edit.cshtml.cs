@@ -10,11 +10,11 @@ using ContosoUniversity.Models;
 
 namespace ContosoUniversity.Pages.Courses
 {
-    public class EditModel : PageModel
+    public class EditModel : DepartmentNamePageModel
     {
-        private readonly ContosoUniversity.Models.SchoolContext _context;
+        private readonly SchoolContext _context;
 
-        public EditModel(ContosoUniversity.Models.SchoolContext context)
+        public EditModel(SchoolContext context)
         {
             _context = context;
         }
@@ -36,41 +36,30 @@ namespace ContosoUniversity.Pages.Courses
             {
                 return NotFound();
             }
-           ViewData["DepartmentID"] = new SelectList(_context.Departments, "DepartmentID", "DepartmentID");
+
+			PopulateDepartmentsDropDownList(_context, Course.DepartmentID);
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.Attach(Course).State = EntityState.Modified;
+			var courseToUpdate = await _context.Course.FindAsync(id);
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CourseExists(Course.CourseID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+			if (await TryUpdateModelAsync<Course>(
+				courseToUpdate, "course", c => c.Credits, c => c.DepartmentID, c => c.Title))
+			{
+				await _context.SaveChangesAsync();
+				return RedirectToPage("./Index");
+			}
 
-            return RedirectToPage("./Index");
-        }
-
-        private bool CourseExists(int id)
-        {
-            return _context.Course.Any(e => e.CourseID == id);
+			//Select DepartmentID if TryUpdateModelAsync fails
+			PopulateDepartmentsDropDownList(_context, courseToUpdate.DepartmentID);
+			return Page();
         }
     }
 }
