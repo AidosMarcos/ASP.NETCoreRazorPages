@@ -77,3 +77,8 @@ C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\De
 C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\Razor\Pages\Courses\Details.g.cshtml.cs
 C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\Razor\Pages\Courses\Edit.g.cshtml.cs
 C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\Razor\Pages\Courses\Index.g.cshtml.cs
+C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\Razor\Pages\Instructors\Create.g.cshtml.cs
+C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\Razor\Pages\Instructors\Delete.g.cshtml.cs
+C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\Razor\Pages\Instructors\Details.g.cshtml.cs
+C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\Razor\Pages\Instructors\Edit.g.cshtml.cs
+C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\Razor\Pages\Instructors\Index.g.cshtml.cs
