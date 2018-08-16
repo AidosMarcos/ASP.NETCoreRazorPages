@@ -13,7 +13,6 @@ namespace ContosoUniversity.Models
 		[Display(Name = "Office Location")]
 		public string Location { get; set; }
 
-		[Required] // unnecessary because we already require the InstructorID, but just to point out that OfficeAssigment only exists if it has an Instructor assigned
 		public Instructor Instructor { get; set; }
     }
 }
