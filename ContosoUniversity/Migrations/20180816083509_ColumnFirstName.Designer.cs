@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ContosoUniversity.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20180814172426_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20180816083509_ColumnFirstName")]
+    partial class ColumnFirstName
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -63,9 +63,12 @@ namespace ContosoUniversity.Migrations
 
                     b.Property<DateTime>("EnrollmentDate");
 
-                    b.Property<string>("FirstMidName");
+                    b.Property<string>("FirstMidName")
+                        .HasColumnName("FirstName")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("LastName")
+                        .HasMaxLength(50);
 
                     b.HasKey("ID");
 
@@ -84,12 +87,7 @@ namespace ContosoUniversity.Migrations
                         .HasForeignKey("StudentID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
-
-			modelBuilder.Entity<Department>()
-				.HasOne(d => d.Administrator)
-				.WithMany()
-				.OnDelete(DeleteBehavior.Restrict);
 #pragma warning restore 612, 618
-		}
+        }
     }
 }

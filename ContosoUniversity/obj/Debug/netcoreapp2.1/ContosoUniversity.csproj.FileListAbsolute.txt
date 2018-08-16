@@ -72,3 +72,8 @@ C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\De
 C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\ContosoUniversity.dll
 C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\ContosoUniversity.pdb
 C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\ContosoUniversity.csproj.CopyComplete
+C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\Razor\Pages\Courses\Create.g.cshtml.cs
+C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\Razor\Pages\Courses\Delete.g.cshtml.cs
+C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\Razor\Pages\Courses\Details.g.cshtml.cs
+C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\Razor\Pages\Courses\Edit.g.cshtml.cs
+C:\Users\MarcosAidos\source\repos\ASP.NETCoreRazorPages\ContosoUniversity\obj\Debug\netcoreapp2.1\Razor\Pages\Courses\Index.g.cshtml.cs
