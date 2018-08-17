@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ContosoUniversity.Models;
 
-namespace ContosoUniversity.Pages.Instructors
+namespace ContosoUniversity.Pages.Departments
 {
     public class DeleteModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace ContosoUniversity.Pages.Instructors
         }
 
         [BindProperty]
-        public Instructor Instructor { get; set; }
+        public Department Department { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,10 @@ namespace ContosoUniversity.Pages.Instructors
                 return NotFound();
             }
 
-            Instructor = await _context.Instructors.FirstOrDefaultAsync(m => m.ID == id);
+            Department = await _context.Departments
+                .Include(d => d.Administrator).FirstOrDefaultAsync(m => m.DepartmentID == id);
 
-            if (Instructor == null)
+            if (Department == null)
             {
                 return NotFound();
             }
@@ -39,16 +40,19 @@ namespace ContosoUniversity.Pages.Instructors
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-			Instructor instructor = await _context.Instructors.Include(i => i.CourseAssigments).SingleAsync(i => i.ID == id);
+            Department = await _context.Departments.FindAsync(id);
 
-			var departments = await _context.Departments.Where(d => d.InstructorID == id).ToListAsync();
+            if (Department != null)
+            {
+                _context.Departments.Remove(Department);
+                await _context.SaveChangesAsync();
+            }
 
-			departments.ForEach(d => d.InstructorID = null);
-
-			_context.Instructors.Remove(instructor);
-
-			await _context.SaveChangesAsync();
             return RedirectToPage("./Index");
         }
     }
